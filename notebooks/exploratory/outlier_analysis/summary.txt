@@ -1,0 +1,25 @@
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:            Consistency   R-squared:                       0.414
+Model:                            OLS   Adj. R-squared:                  0.413
+Method:                 Least Squares   F-statistic:                     313.4
+Date:                Tue, 28 Feb 2023   Prob (F-statistic):           2.02e-53
+Time:                        17:58:48   Log-Likelihood:                -755.74
+No. Observations:                 445   AIC:                             1515.
+Df Residuals:                     443   BIC:                             1524.
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+Intercept      6.7952      0.129     52.629      0.000       6.541       7.049
+Distance       2.5771      0.146     17.703      0.000       2.291       2.863
+==============================================================================
+Omnibus:                       12.820   Durbin-Watson:                   1.985
+Prob(Omnibus):                  0.002   Jarque-Bera (JB):               13.115
+Skew:                          -0.397   Prob(JB):                      0.00142
+Kurtosis:                       3.276   Cond. No.                         3.88
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
