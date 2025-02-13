@@ -25,11 +25,9 @@ Directory Structure
     │
     ├── models             <- Trained and serialized models, model predictions, or model summaries
     │
-    ├── notebooks          <- Jupyter notebooks.
-    │
     ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
     │
-    ├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
+    ├── notebooks            <- Jupyter notebooks
     │   └── exploratory    <- Ad-hoc analysis
     │   └── other          <- Miscellanious
     │   └── reports        <- Article figures, etc
