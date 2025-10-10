@@ -16,8 +16,13 @@ This repository contains all the code used to process the data and generate the 
 
 To run the notebooks, we also need to download the process the raw FASTQ data via the [SIQ](https://pubmed.ncbi.nlm.nih.gov/36071722/) tool:
 
-1. Download the raw FASTQ files from the NCBI Sequence Read Archive ().
-2. Run SIQ using the parameters `m 2 -c -e 0.05`.
+1. Download the raw FASTQ files from the NCBI Sequence Read Archive (see main article for details).
+2. Run SIQ on the FASTQ files using the parameters `m 2 -c -e 0.05`. An example usage might look like:
+
+```
+java -jar ~/.local/bin/SIQ.jar  -m 2 -c -e 0.05  \
+-infile /path/to/my/fastq/target.fastq -subject <TARGET SEQUENCE> -left <LEFT FLANK OF CUTSITE> -right <RIGHT FLANK OF CUTSITE> -o <OUTPUT NAME> 
+```
 
 
 ## Preprocessing SIQ output and producing mutational spectra
