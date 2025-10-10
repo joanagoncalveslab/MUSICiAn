@@ -12,11 +12,33 @@
 
 ## Repository details
 
-This repository contains all the code and processed data files used to process the data and generate the results for the paper "[MUSICiAn: Genome-wide Identification of Genes Involved in DNA Repair via Control-Free Mutational Spectra Analysis]((https://doi.org/10.1101/2025.01.27.635038))". The repository assumes the raw FASTQ files have been downloaded and processed via [SIQ](https://pubmed.ncbi.nlm.nih.gov/36071722/) using the parameters `m 2 -c -e 0.05`. See the main article for full details. 
+This repository contains all the code used to process the data and generate the results for the paper "[MUSICiAn: Genome-wide Identification of Genes Involved in DNA Repair via Control-Free Mutational Spectra Analysis]((https://doi.org/10.1101/2025.01.27.635038))". After cloning the repository, please run `pip install -r requirements.txt` from within the top-level directory to install all the necessary packages to run python scripts and jupyter notebooks. 
+
+To run the notebooks, we also need to download the process the raw FASTQ data via the [SIQ](https://pubmed.ncbi.nlm.nih.gov/36071722/) tool:
+
+1. Download the raw FASTQ files from the NCBI Sequence Read Archive ().
+2. Run SIQ using the parameters `m 2 -c -e 0.05`.
+
+
+## Preprocessing SIQ output and producing mutational spectra
+
+The folder `src/data/` contains python scripts for processing the [SIQ](https://pubmed.ncbi.nlm.nih.gov/36071722/) output into mutational spectra: 
+
+1. Run the files `make_dataset.R` and `make_dataset.py` on the SIQ output for a specified target site to produce a SQLite database of mutations per target site. 
+2. Run the file `pipeline.py` to complete the pre-processing steps to produce pickle objects containing the mutational spectra per target site/replicate. 
+
+These outputted pickle objects are then loaded by the notebooks to perform the analysis.
+
 
 ## Running the notebooks
 
-After cloning the repository, please run `pip install -r requirements.txt` from within the top-level directory to install all the necessary packages to run python scripts and jupyter notebooks. The folder `src/data/` contains python scripts for downloading and processing the [SIQ](https://pubmed.ncbi.nlm.nih.gov/36071722/) output into mutational spectra. The Jupyter notebooks under `notebooks/reports` score the mutational spectra and generate the figures used in the article. Please refer to the main article for full details on the algorithm. 
+The Jupyter notebooks under `notebooks/reports` score the mutational spectra and generate the figures used in the article. Please refer to the main article for full details on the algorithm. The main notebooks to produce the figures are:
+
+- 1.pseudo_vs_real_controls_X.ipynb
+- 2.general_analysis.ipynb
+- 3.GO_analysis.ipynb
+- 4.OLS.ipynb
+- 5.top_genes.ipynb
 
 
 Directory Structure
